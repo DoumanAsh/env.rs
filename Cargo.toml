@@ -1,0 +1,28 @@
+[package]
+name = "env-cli"
+version = "1.0.0"
+authors = ["Douman <douman@gmx.se>"]
+edition = "2018"
+readme = "README.md"
+description = "Utility to run command in modified environment"
+repository = "https://github.com/DoumanAsh/env.rs"
+license = "BSL-1.0"
+keywords = ["env", "environment"]
+include = [
+    "**/*.rs",
+    "Cargo.toml",
+    "README.md"
+]
+
+[[bin]]
+path = "src/main.rs"
+name = "env"
+
+[dependencies]
+arg = "0.3"
+c-ffi = { version = "0.2", default-features = false }
+
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1
