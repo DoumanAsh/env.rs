@@ -8,17 +8,14 @@ Limited port of [env](http://man7.org/linux/man-pages/man1/env.1.html) utility
 ## Usage
 
 ```
-env
+env 1.0.1
 Executes program in a modified environment
 
-USAGE: [OPTIONS] [args]...
+USAGE: [OPTIONS] [NAME=VALUE]... [COMMAND [ARG]...]
 
 OPTIONS:
     -h,  --help                Prints this help information
     -i,  --ignore-environment  Start with an empty environment
     -C,  --chdir <chdir>       Changes working directory to specified one.
-    -u,  --unset <unset>...    Remove variable from the environment
-
-ARGS:
-    <args>...  Environment maps(NAME=VALUE) and command
+    -u,  --unset <unset>       Remove variable from the environment
 ```
