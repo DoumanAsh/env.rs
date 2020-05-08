@@ -6,10 +6,9 @@ use std::process::Command;
 
 mod cli;
 
-#[no_mangle]
-pub unsafe extern fn main(argc: std::os::raw::c_int, argv: *const *const u8) -> std::os::raw::c_int {
-    let args = c_ffi::Args::new(argc as isize, argv).expect("Cannot get function arguments");
+c_ffi::c_main!(run);
 
+fn run(args: c_ffi::Args) -> std::os::raw::c_int {
     let args = match cli::Cli::parse(args.into_iter().skip(1)) {
         Ok(args) => args,
         Err(code) => return code
